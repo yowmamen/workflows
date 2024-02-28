@@ -1,0 +1,15 @@
+name: Test Workflow
+on:
+  workflow_call:
+    inputs:
+      a:
+        required: true
+        type: string
+
+  # Cambia esto al nombre de la rama en la que deseas activar el workflow
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ secrets[inputs.a] }}
